@@ -18,9 +18,4 @@ format:
 
 editor: visual
 
-git remote set-url origin https://github.com/cameron0707/Lab-7.git
-git add .
-git commit -m "first commit"
-git branch -M main
-git push -u origin main
 
