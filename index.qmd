@@ -6,6 +6,10 @@ This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
+```         
+git remote set-url origin https://github.com/cameron0707/quarto5.git
+git add .
+git commit -m "first commit"
+git branch -M main
+git push -u origin main
 ```

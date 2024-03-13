@@ -2,8 +2,12 @@
 title: "About"
 ---
 
-About this site
+About me
 
-```{r}
-1 + 1
+![](images/IMG_7235.jpg)
+
+```         
+(Cami and her dog Scrappy)
 ```
+
+Hello! I am a senior at the University of Massachusetts (Amherst). I am majoring in biology and hoping to pursue a career in research. In my free time, I volunteer with Habitat for Humanity to help those in need in my local community. I also enjoy running and exploring the beautiful scenery Amherst has to offer. I am from Pittsfield, Massachusetts, which is in the Berkshires and offers the same beautiful landscape I can never get tired of. Last summer, I had the I had the privilege of participating in an NSF REU program at the University of Iowa, an experience that further ignited my passion to pursue research.

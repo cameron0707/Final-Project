@@ -4,13 +4,34 @@
     "href": "index.html",
     "title": "quarto5",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\ngit remote set-url origin https://github.com/cameron0707/quarto5.git\ngit add .\ngit commit -m \"first commit\"\ngit branch -M main\ngit push -u origin main"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "About me\n\n(Cami and her dog Scrappy)\nHello! I am a senior at the University of Massachusetts (Amherst). I am majoring in biology and hoping to pursue a career in research. In my free time, I volunteer with Habitat for Humanity to help those in need in my local community. I also enjoy running and exploring the beautiful scenery Amherst has to offer. I am from Pittsfield, Massachusetts, which is in the Berkshires and offers the same beautiful landscape I can never get tired of. Last summer, I had the I had the privilege of participating in an NSF REU program at the University of Iowa, an experience that further ignited my passion to pursue research."
+  },
+  {
+    "objectID": "Presentation.html",
+    "href": "Presentation.html",
+    "title": "Presentation",
+    "section": "",
+    "text": "This is where I will be putting my presentation."
+  },
+  {
+    "objectID": "Project.html",
+    "href": "Project.html",
+    "title": "Project",
+    "section": "",
+    "text": "This is where I will be putting my project."
+  },
+  {
+    "objectID": "Labs.html",
+    "href": "Labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This is where I will be putting my labs."
   }
 ]
