@@ -2,4 +2,11 @@
 title: "Introduction"
 ---
 
-This is where I will be putting my labs.
+Chase Lake Wetlands, also known as Woodworth (WOOD), is a terrestrial NEON field site located near Woodworth, North Dakota, managed by the U.S. Fish and Wildlife Service and the U.S. Geological
+Survey as part of the Chase Lake National Wildlife Refuge (NWR). Covering an 11 km² area, WOOD features a mix of grasslands, agricultural areas, and wetlands within the Missouri Coteau region, known for its
+prairie potholes formed by glacial activity. The region has a continental climate with significant temperature variations and moderate annual precipitation (330-508 mm). Winters can drop below -17.8°C, and summers can exceed 32°C. The climate is characterized by strong winds, thunderstorms, and extreme weather events, including hailstorms and tornadoes. The area has a long history of Native American presence and later European settlement. Established in 1908, Chase Lake NWR has been used
+for wildlife studies since 1969, focusing on the effects of grazing, burning, and cropping.
+
+![](images/Screen%20Shot%202024-05-16%20at%209.37.49%20AM.png)
+
+\[\@noauthor_chase_nodate\] Chase Lake National Wildlife Refuge NEON, n.d.

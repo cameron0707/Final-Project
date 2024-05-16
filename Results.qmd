@@ -1,3 +1,122 @@
 ---
 title: "Results"
 ---
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+```{r}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("ggtree")
+```
+```{r}
+install.packages("dplyr")
+install.packages("readr")
+```
+
+
+```{r}
+library(tidyverse)
+library(ggtree)
+# added treeio and ggimage library
+library(treeio)
+library(ggimage)
+library(rphylopic)
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(ggtree)
+library(TDbook) #A Companion Package for the Book "Data Integration, Manipulation and Visualization of Phylogenetic Trees" by Guangchuang Yu (2022, ISBN:9781032233574).
+library(ggimage)
+library(rphylopic)
+library(treeio)
+library(tidytree)
+library(ape)
+library(TreeTools)
+library(phytools)
+library(ggnewscale)
+library(ggstar)
+```
+```{r}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
+```
+```{r}
+install.packages("boot")
+install.packages("codetools")
+install.packages("lattice")
+install.packages("survival")
+```
+
+```{r}
+NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON_edArchaea.csv") %>% 
+  # remove columns that are not needed for data analysis
+  select(-c(`GOLD Study ID`, `Bin Methods`, `Created By`, `Date Added`)) %>% 
+  # create a new column with the Assembly Type
+  mutate("Assembly Type" = case_when(`Genome Name` == "NEON combined assembly" ~ `Genome Name`,
+                            TRUE ~ "Individual")) %>% 
+  mutate_at("Assembly Type", str_replace, "NEON combined assembly", "Combined") %>% 
+  separate(`GTDB-Tk Taxonomy Lineage`, c("Domain", "Phylum", "Class", "Order", "Family", "Genus"), "; ", remove = FALSE) %>% 
+  # Get rid of the the common string "Soil microbial communities from "
+  mutate_at("Genome Name", str_replace, "Terrestrial soil microbial communities from ", "") %>% 
+  # Use the first `-` to split the column in two
+  separate(`Genome Name`, c("Site","Sample Name"), " - ") %>% 
+  # Get rid of the the common string "S-comp-1"
+  mutate_at("Sample Name", str_replace, "-comp-1", "") %>%
+  # separate the Sample Name into Site ID and plot info
+  separate(`Sample Name`, c("Site ID","subplot.layer.date"), "_", remove = FALSE,) %>% 
+  # separate the plot info into 3 columns
+  separate(`subplot.layer.date`, c("Subplot", "Layer", "Date"), "-") 
+```
+
+```{r}
+NEON_metagenomes <- read_tsv("data/NEON/exported_img_data_Gs0161344_NEON.tsv") %>% 
+  rename(`Genome Name` = `Genome Name / Sample Name`) %>% 
+  filter(str_detect(`Genome Name`, 're-annotation', negate = T)) %>% 
+  filter(str_detect(`Genome Name`, 'WREF plot', negate = T)) 
+```
+
+```{r}
+NEON_metagenomes <- NEON_metagenomes %>% 
+  # Get rid of the the common string "Soil microbial communities from "
+  mutate_at("Genome Name", str_replace, "Terrestrial soil microbial communities from ", "") %>% 
+  # Use the first `-` to split the column in two
+  separate(`Genome Name`, c("Site","Sample Name"), " - ") %>% 
+  # Get rid of the the common string "-comp-1"
+  mutate_at("Sample Name", str_replace, "-comp-1", "") %>%
+  # separate the Sample Name into Site ID and plot info
+  separate(`Sample Name`, c("Site ID","subplot.layer.date"), "_", remove = FALSE,) %>% 
+  # separate the plot info into 3 columns
+  separate(`subplot.layer.date`, c("Subplot", "Layer", "Date"), "-") 
+```
+```{r}
+NEON_chemistry <- read_tsv("data/NEON/neon_plot_soilChem1_metadata.tsv") %>% 
+  # remove -COMP from genomicsSampleID
+  mutate_at("genomicsSampleID", str_replace, "-COMP", "") 
+```
+
+```{r}
+NEON_MAGs_metagenomes_chemistry <- NEON_MAGs %>% 
+  left_join(NEON_metagenomes, by = "Sample Name") %>%
+  left_join(NEON_chemistry, by = c("Sample Name" = "genomicsSampleID"))
+head(NEON_MAGs_metagenomes_chemistry)
+```
+```{r}
+NEON_MAGs_metagenomes_chemistry_alphaproteobacteria <- NEON_MAGs_metagenomes_chemistry %>% 
+  left_join(NEON_metagenomes, by = "Sample Name") %>%
+  left_join(NEON_chemistry, by = c("Sample Name" = "genomicsSampleID")) %>%
+  filter(`Class`== "Alphaproteobacteria")
+head(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria)
+```
+```{r}
+NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
+ggplot(aes(x = `Site.x`, y = soilTemp.x)) +
+  geom_boxplot()
+```

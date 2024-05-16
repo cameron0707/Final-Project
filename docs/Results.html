@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto5 - Results</title>
+<title>final project - Results</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -79,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">quarto5</span>
+    <span class="navbar-title">final project</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -89,24 +123,28 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./abstract.html"> 
+<span class="menu-text">Abstract</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./MotivatingReasons.html"> 
+<span class="menu-text">Motivating Reasons</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Labs.html"> 
-<span class="menu-text">Labs</span></a>
+    <a class="nav-link" href="./Introduction.html"> 
+<span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Project.html"> 
-<span class="menu-text">Project</span></a>
+    <a class="nav-link" href="./Methods.html"> 
+<span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Presentation.html"> 
-<span class="menu-text">Presentation</span></a>
+    <a class="nav-link active" href="./Results.html" aria-current="page"> 
+<span class="menu-text">Results</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Discussion.html"> 
+<span class="menu-text">Discussion</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -144,6 +182,447 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bioconductor version '3.18' is out-of-date; the current release version '3.19'
+  is available with R version '4.4'; see https://bioconductor.org/install</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggtree"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: http://rspm/default/__linux__/focal/latest</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bioconductor version 3.18 (BiocManager 1.30.23), R 4.3.3 (2024-02-29)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package(s) not installed when version(s) same as or greater than current; use
+  `force = TRUE` to re-install: 'ggtree'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installation paths not writeable, unable to update packages
+  path: /opt/R/4.3.3/lib/R/library
+  packages:
+    boot, codetools, lattice, survival</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ggtree v3.10.1 For help: https://yulab-smu.top/treedata-book/
+
+If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam.
+ggtree: an R package for visualization and annotation of phylogenetic
+trees with their covariates and other associated data. Methods in
+Ecology and Evolution. 2017, 8(1):28-36. doi:10.1111/2041-210X.12628
+
+Shuangbin Xu, Lin Li, Xiao Luo, Meijun Chen, Wenli Tang, Li Zhan, Zehan
+Dai, Tommy T. Lam, Yi Guan, Guangchuang Yu. Ggtree: A serialized data
+object for visualization of a phylogenetic tree and annotation data.
+iMeta 2022, 1(4):e56. doi:10.1002/imt2.56
+
+Guangchuang Yu, Tommy Tsan-Yuk Lam, Huachen Zhu, Yi Guan. Two methods
+for mapping and visualizing associated data on phylogeny using ggtree.
+Molecular Biology and Evolution. 2018, 35(12):3041-3043.
+doi:10.1093/molbev/msy194</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ggtree'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    expand</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added treeio and ggimage library</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(treeio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>treeio v1.26.0 For help: https://yulab-smu.top/treedata-book/
+
+If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+LG Wang, TTY Lam, S Xu, Z Dai, L Zhou, T Feng, P Guo, CW Dunn, BR
+Jones, T Bradley, H Zhu, Y Guan, Y Jiang, G Yu. treeio: an R package
+for phylogenetic tree input and output with richly annotated and
+associated data. Molecular Biology and Evolution. 2020, 37(2):599-603.
+doi: 10.1093/molbev/msz240
+
+Shuangbin Xu, Lin Li, Xiao Luo, Meijun Chen, Wenli Tang, Li Zhan, Zehan
+Dai, Tommy T. Lam, Yi Guan, Guangchuang Yu. Ggtree: A serialized data
+object for visualization of a phylogenetic tree and annotation data.
+iMeta 2022, 1(4):e56. doi:10.1002/imt2.56
+
+Guangchuang Yu, Tommy Tsan-Yuk Lam, Huachen Zhu, Yi Guan. Two methods
+for mapping and visualizing associated data on phylogeny using ggtree.
+Molecular Biology and Evolution. 2018, 35(12):3041-3043.
+doi:10.1093/molbev/msy194</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rphylopic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>You are using rphylopic v.1.4.0. Please remember to credit PhyloPic contributors (hint: `get_attribution()`) and cite rphylopic in your work (hint: `citation("rphylopic")`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'rphylopic'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggimage':
+
+    geom_phylopic</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtree)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TDbook) <span class="co">#A Companion Package for the Book "Data Integration, Manipulation and Visualization of Phylogenetic Trees" by Guangchuang Yu (2022, ISBN:9781032233574).</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rphylopic)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(treeio)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+G Yu. Data Integration, Manipulation and Visualization of Phylogenetic
+Trees (1st ed.). Chapman and Hall/CRC. 2022. ISBN: 9781032233574
+
+Guangchuang Yu. Using ggtree to visualize data on tree-like structures.
+Current Protocols in Bioinformatics. 2020, 69:e96. doi:10.1002/cpbi.96</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'tidytree'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:treeio':
+
+    getNodeNum</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ape'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:tidytree':
+
+    drop.tip, keep.tip</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:treeio':
+
+    drop.tip</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggtree':
+
+    rotate</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    where</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TreeTools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'TreeTools'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidytree':
+
+    MRCA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:treeio':
+
+    MRCA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggtree':
+
+    MRCA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(phytools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: maps</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'maps'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    map</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'phytools'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:TreeTools':
+
+    as.multiPhylo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:treeio':
+
+    read.newick</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggnewscale)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"Biostrings"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: http://rspm/default/__linux__/focal/latest</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bioconductor version 3.18 (BiocManager 1.30.23), R 4.3.3 (2024-02-29)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package(s) not installed when version(s) same as or greater than current; use
+  `force = TRUE` to re-install: 'Biostrings'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installation paths not writeable, unable to update packages
+  path: /opt/R/4.3.3/lib/R/library
+  packages:
+    boot, codetools, lattice, survival</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"boot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"codetools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lattice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"survival"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/cloud/lib/x86_64-pc-linux-gnu-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>NEON_MAGs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/NEON/GOLD_Study_ID_Gs0161344_NEON_edArchaea.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># remove columns that are not needed for data analysis</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">GOLD Study ID</span><span class="st">`</span>, <span class="st">`</span><span class="at">Bin Methods</span><span class="st">`</span>, <span class="st">`</span><span class="at">Created By</span><span class="st">`</span>, <span class="st">`</span><span class="at">Date Added</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create a new column with the Assembly Type</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">"Assembly Type"</span> <span class="ot">=</span> <span class="fu">case_when</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"NEON combined assembly"</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span>,</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>                            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Individual"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"Assembly Type"</span>, str_replace, <span class="st">"NEON combined assembly"</span>, <span class="st">"Combined"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">GTDB-Tk Taxonomy Lineage</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Domain"</span>, <span class="st">"Phylum"</span>, <span class="st">"Class"</span>, <span class="st">"Order"</span>, <span class="st">"Family"</span>, <span class="st">"Genus"</span>), <span class="st">"; "</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get rid of the the common string "Soil microbial communities from "</span></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"Genome Name"</span>, str_replace, <span class="st">"Terrestrial soil microbial communities from "</span>, <span class="st">""</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use the first `-` to split the column in two</span></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Site"</span>,<span class="st">"Sample Name"</span>), <span class="st">" - "</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get rid of the the common string "S-comp-1"</span></span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"Sample Name"</span>, str_replace, <span class="st">"-comp-1"</span>, <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the Sample Name into Site ID and plot info</span></span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">Sample Name</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Site ID"</span>,<span class="st">"subplot.layer.date"</span>), <span class="st">"_"</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>,) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the plot info into 3 columns</span></span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">subplot.layer.date</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Subplot"</span>, <span class="st">"Layer"</span>, <span class="st">"Date"</span>), <span class="st">"-"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1754 Columns: 19
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr   (8): Bin ID, Genome Name, Bin Quality, Bin Lineage, GTDB-Tk Taxonomy L...
+dbl  (10): IMG Genome ID, Bin Completeness, Bin Contamination, Total Number ...
+date  (1): Date Added
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expected 6 pieces. Additional pieces discarded in 46 rows [3, 4, 24, 25, 26,
+27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 54, 232, 267, ...].</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expected 6 pieces. Missing pieces filled with `NA` in 446 rows [1, 2, 9, 10,
+11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 46, 50, 53, ...].</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expected 2 pieces. Missing pieces filled with `NA` in 624 rows [4, 7, 8, 236,
+237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252,
+...].</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>NEON_metagenomes <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/NEON/exported_img_data_Gs0161344_NEON.tsv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Genome Name / Sample Name</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span>, <span class="st">'re-annotation'</span>, <span class="at">negate =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span>, <span class="st">'WREF plot'</span>, <span class="at">negate =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 176 Columns: 46
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (18): Domain, Sequencing Status, Study Name, Genome Name / Sample Name, ...
+dbl (16): taxon_oid, IMG Genome ID, Depth In Meters, Elevation In Meters, Ge...
+lgl (12): Altitude In Meters, Chlorophyll Concentration, Longhurst Code, Lon...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>NEON_metagenomes <span class="ot">&lt;-</span> NEON_metagenomes <span class="sc">%&gt;%</span> </span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get rid of the the common string "Soil microbial communities from "</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"Genome Name"</span>, str_replace, <span class="st">"Terrestrial soil microbial communities from "</span>, <span class="st">""</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use the first `-` to split the column in two</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">Genome Name</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Site"</span>,<span class="st">"Sample Name"</span>), <span class="st">" - "</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get rid of the the common string "-comp-1"</span></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"Sample Name"</span>, str_replace, <span class="st">"-comp-1"</span>, <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the Sample Name into Site ID and plot info</span></span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">Sample Name</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Site ID"</span>,<span class="st">"subplot.layer.date"</span>), <span class="st">"_"</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>,) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the plot info into 3 columns</span></span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">subplot.layer.date</span><span class="st">`</span>, <span class="fu">c</span>(<span class="st">"Subplot"</span>, <span class="st">"Layer"</span>, <span class="st">"Date"</span>), <span class="st">"-"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expected 2 pieces. Missing pieces filled with `NA` in 1 rows [53].</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>NEON_chemistry <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/NEON/neon_plot_soilChem1_metadata.tsv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># remove -COMP from genomicsSampleID</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="st">"genomicsSampleID"</span>, str_replace, <span class="st">"-COMP"</span>, <span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 87 Columns: 17
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr   (5): genomicsSampleID, siteID, plotID, nlcdClass, horizon
+dbl  (11): decimalLatitude, decimalLongitude, elevation, soilTemp, d15N, org...
+date  (1): collectionDate
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>NEON_MAGs_metagenomes_chemistry <span class="ot">&lt;-</span> NEON_MAGs <span class="sc">%&gt;%</span> </span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(NEON_metagenomes, <span class="at">by =</span> <span class="st">"Sample Name"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(NEON_chemistry, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Sample Name"</span> <span class="ot">=</span> <span class="st">"genomicsSampleID"</span>))</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NEON_MAGs_metagenomes_chemistry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 93
+  `Bin ID`        Site.x      `Sample Name` `Site ID.x` Subplot.x Layer.x Date.x
+  &lt;chr&gt;           &lt;chr&gt;       &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; 
+1 3300060887_39   Guanica St… GUAN_042-M-2… GUAN        042       M       20210…
+2 3300060914_30   Guanica St… GUAN_043-M-2… GUAN        043       M       20210…
+3 3300060650_39   Healy, Den… HEAL_048-O-2… HEAL        048       O       20210…
+4 3300067032_2117 NEON combi… &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;  
+5 3300060650_21   Healy, Den… HEAL_048-O-2… HEAL        048       O       20210…
+6 3300060650_24   Healy, Den… HEAL_048-O-2… HEAL        048       O       20210…
+# ℹ 86 more variables: `IMG Genome ID.x` &lt;dbl&gt;, `Bin Quality` &lt;chr&gt;,
+#   `Bin Lineage` &lt;chr&gt;, `GTDB-Tk Taxonomy Lineage` &lt;chr&gt;, Domain.x &lt;chr&gt;,
+#   Phylum &lt;chr&gt;, Class &lt;chr&gt;, Order &lt;chr&gt;, Family &lt;chr&gt;, Genus &lt;chr&gt;,
+#   `Bin Completeness` &lt;dbl&gt;, `Bin Contamination` &lt;dbl&gt;,
+#   `Total Number of Bases` &lt;dbl&gt;, `5s rRNA` &lt;dbl&gt;, `16s rRNA` &lt;dbl&gt;,
+#   `23s rRNA` &lt;dbl&gt;, `tRNA Genes` &lt;dbl&gt;, `Gene Count` &lt;dbl&gt;,
+#   `Scaffold Count` &lt;dbl&gt;, `Assembly Type` &lt;chr&gt;, taxon_oid &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>NEON_MAGs_metagenomes_chemistry_alphaproteobacteria <span class="ot">&lt;-</span> NEON_MAGs_metagenomes_chemistry <span class="sc">%&gt;%</span> </span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(NEON_metagenomes, <span class="at">by =</span> <span class="st">"Sample Name"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(NEON_chemistry, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Sample Name"</span> <span class="ot">=</span> <span class="st">"genomicsSampleID"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Class</span><span class="st">`</span><span class="sc">==</span> <span class="st">"Alphaproteobacteria"</span>)</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 159
+  `Bin ID`       Site.x       `Sample Name` `Site ID.x` Subplot.x Layer.x Date.x
+  &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; 
+1 3300061639_24  Niwot Ridge… NIWO_004-O-2… NIWO        004       O       20210…
+2 3300067032_513 NEON combin… &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;  
+3 3300060645_18  Caribou Cre… BONA_006-O-2… BONA        006       O       20210…
+4 3300060649_28  Caribou Cre… BONA_001-O-2… BONA        001       O       20210…
+5 3300060649_46  Caribou Cre… BONA_001-O-2… BONA        001       O       20210…
+6 3300060656_60  Toolik Fiel… TOOL_005-O-2… TOOL        005       O       20210…
+# ℹ 152 more variables: `IMG Genome ID.x` &lt;dbl&gt;, `Bin Quality` &lt;chr&gt;,
+#   `Bin Lineage` &lt;chr&gt;, `GTDB-Tk Taxonomy Lineage` &lt;chr&gt;, Domain.x &lt;chr&gt;,
+#   Phylum &lt;chr&gt;, Class &lt;chr&gt;, Order &lt;chr&gt;, Family &lt;chr&gt;, Genus &lt;chr&gt;,
+#   `Bin Completeness` &lt;dbl&gt;, `Bin Contamination` &lt;dbl&gt;,
+#   `Total Number of Bases` &lt;dbl&gt;, `5s rRNA` &lt;dbl&gt;, `16s rRNA` &lt;dbl&gt;,
+#   `23s rRNA` &lt;dbl&gt;, `tRNA Genes` &lt;dbl&gt;, `Gene Count` &lt;dbl&gt;,
+#   `Scaffold Count` &lt;dbl&gt;, `Assembly Type` &lt;chr&gt;, taxon_oid.x &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>NEON_MAGs_metagenomes_chemistry_alphaproteobacteria <span class="sc">%&gt;%</span>  </span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Site.x</span><span class="st">`</span>, <span class="at">y =</span> soilTemp.x)) <span class="sc">+</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 87 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Results_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 

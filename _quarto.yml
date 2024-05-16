@@ -16,7 +16,7 @@ website:
         text: Methods
       - href: Results.qmd
         text: Results
-      - href: discussion.qmd
+      - href: Discussion.qmd
         text: Discussion
         
 
