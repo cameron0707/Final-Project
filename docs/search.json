@@ -1,10 +1,24 @@
 [
   {
+    "objectID": "Labs.html",
+    "href": "Labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This is where I will be putting my labs."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "quarto5",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\ngit remote set-url origin https://github.com/cameron0707/quarto5.git\ngit add .\ngit commit -m \"first commit\"\ngit branch -M main\ngit push -u origin main"
+  },
+  {
+    "objectID": "Project.html",
+    "href": "Project.html",
+    "title": "Project",
+    "section": "",
+    "text": "This is where I will be putting my project."
   },
   {
     "objectID": "about.html",
@@ -19,19 +33,5 @@
     "title": "Presentation",
     "section": "",
     "text": "This is where I will be putting my presentation."
-  },
-  {
-    "objectID": "Project.html",
-    "href": "Project.html",
-    "title": "Project",
-    "section": "",
-    "text": "This is where I will be putting my project."
-  },
-  {
-    "objectID": "Labs.html",
-    "href": "Labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "This is where I will be putting my labs."
   }
 ]
