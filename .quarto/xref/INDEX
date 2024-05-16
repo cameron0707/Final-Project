@@ -13,5 +13,26 @@
   },
   "Labs.qmd": {
     "Labs.html": "97010fe5"
+  },
+  "abstract.qmd": {
+    "abstract.html": "ed40a35e"
+  },
+  "Introduction.qmd": {
+    "Introduction.html": "67efcc12"
+  },
+  "Motivating Reasons.qmd": {
+    "Motivating Reasons.html": "069a0b7c"
+  },
+  "Results.qmd": {
+    "Results.html": "c94c3106"
+  },
+  "Methods.qmd": {
+    "Methods.html": "dcfca459"
+  },
+  "Discussion.qmd": {
+    "Discussion.html": "c8a1701f"
+  },
+  "MotivatingReasons.qmd": {
+    "MotivatingReasons.html": "72983a5d"
   }
 }

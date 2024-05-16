@@ -3,19 +3,23 @@ project:
   output-dir: docs
 
 website:
-  title: "quarto5"
+  title: "final project"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About
-      - href: Labs.qmd
-        text: Labs
-      - href: Project.qmd
-        text: Project
-      - href: Presentation.qmd
-        text: Presentation
+      - href: abstract.qmd
+        text: Abstract
+      - href: MotivatingReasons.qmd
+        text: Motivating Reasons
+      - href: Introduction.qmd
+        text: Introduction
+      - href: Methods.qmd
+        text: Methods
+      - href: Results.qmd
+        text: Results
+      - href: discussion.qmd
+        text: Discussion
+        
+
 format:
   html:
     theme: darkly
@@ -23,5 +27,6 @@ format:
     toc: true
 
 editor: visual
+
 
 
