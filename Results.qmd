@@ -1,21 +1,33 @@
 ---
 title: "Results"
+execute: 
+  warning: false
+  error: false
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: bootstrap
+    highlight: breezedark
+    code-fold: true
 ---
 
-```{r}
+
+## Libraries and Packages
+
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(knitr)
 ```
-```{r}
+
+```{r, eval=FALSE}
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
 BiocManager::install("ggtree")
 ```
-```{r}
-install.packages("dplyr")
-install.packages("readr")
-```
+
+
 
 
 ```{r}
@@ -48,12 +60,14 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("Biostrings")
 ```
-```{r}
+```{r, eval=FALSE}
 install.packages("boot")
 install.packages("codetools")
 install.packages("lattice")
 install.packages("survival")
 ```
+
+## Loaded Data 
 
 ```{r}
 NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON_edArchaea.csv") %>% 
@@ -120,3 +134,106 @@ NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%
 ggplot(aes(x = `Site.x`, y = soilTemp.x)) +
   geom_boxplot()
 ```
+
+```{r}
+NEON_chemistry_select <- NEON_chemistry %>%
+  select(`genomicsSampleID`, `siteID`, `nlcdClass`)
+head(NEON_chemistry_select)
+```
+```{r}
+NEON_MAGs_select <- NEON_MAGs %>%
+  select(`Sample Name`, `Site ID`, `GTDB-Tk Taxonomy Lineage`)
+  head(NEON_MAGs)
+```
+
+```{r}
+filtered_data <- NEON_MAGs_metagenomes_chemistry %>% 
+  filter(`Site.x` == "Chase Lake Wetlands")
+```
+
+
+
+
+
+```{r}
+NEON_MAGs_select_WOOD <- NEON_MAGs_select %>%
+  filter(`Site ID`== "WOOD")
+  head(NEON_MAGs_select_WOOD)
+```
+```{r}
+NEON_metagenomes_select <- NEON_metagenomes %>%
+  select(`Sample Name`, `Site ID`, `Ecosystem Subtype`)
+head(NEON_metagenomes_select)
+```
+
+```{r}
+NEON_metagenomes_select_WOOD <- NEON_MAGs_metagenomes_chemistry %>%
+  filter(`Site ID.x`== "WOOD")
+  head(NEON_metagenomes_select_WOOD)
+```
+```{r}
+NEON_metagenomes_select_WOOD %>%  
+ggplot(aes(x = `Site.x`, y = soilTemp)) +
+  geom_boxplot()
+```
+
+```{r}
+NEON_metagenomes_select_WOOD %>% 
+  left_join(NEON_MAGs_select_WOOD, by = "Sample Name")
+```
+## Graphs
+
+### Lab 12
+
+```{r}
+NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
+ggplot(aes(x = `soilTemp.x`, y = Site.x)) +
+  geom_boxplot()
+```
+
+
+
+```{r}
+ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilTemp.x`, y = `Ecosystem Subtype.x`, color = Class)) +
+  geom_point() +
+  labs(title = "Scatterplot of Ecosystem Subtype vs Soil Temperature", 
+       x = "soilTemp", 
+       y = "Ecosystem Subtype",
+       color = "Order")
+```
+
+```{r}
+NEON_MAGs_select_WOOD %>% 
+  ggplot(aes(x = `Site ID`, y = `GTDB-Tk Taxonomy Lineage`)) +
+  geom_point()
+```
+
+```{r}
+ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Site.x`, y = `Geographic Location.x`, fill = Family)) +
+  geom_boxplot() +
+  labs(title = "Violin Plot of Geographic Location by Site",
+       x = "Site",
+       y = "Geographic Location",
+       fill = "Family") +
+  scale_x_discrete(labels = abbreviate) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, vjust = 1, size = 8))
+```
+```{r}
+NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
+ggplot(aes(x = `Site.x`, y = `Geographic Location.x`)) +
+  geom_boxplot()
+```
+```{r}
+NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
+  ggplot(aes(x = `Site.x`, y = `Geographic Location.x`)) +
+  geom_boxplot() +
+  labs(
+    title = "Boxplot of Geographic Location by Site",
+    x = "Site",
+    y = "Geographic Location"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+

@@ -18,8 +18,9 @@ website:
         text: Results
       - href: Discussion.qmd
         text: Discussion
+      - href: Conclusion.qmd
+        text: Conclusion
         
-
 format:
   html:
     theme: darkly

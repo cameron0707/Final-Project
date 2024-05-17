@@ -10,7 +10,7 @@ Chase Lake Wetlands, also known as Woodworth (WOOD), is a terrestrial NEON field
 
 Alphaproteobacteria are a diverse and extensively studied group of bacteria that include a variety of phototrophs, chemolithotrophs, chemoorganotrophs, and aerobic photoheterotrophs. Taxonomically, alphaproteobacteria are classified as a class within the phylum Proteobacteria. Alphaproteobacteria make up most phototrophic genera and symbionts of plants and animals and are abundant in terrestrial and marine environments. Alphaproteobacteria are crucial in both agricultural and medical contexts due to their associations with eukaryotic organisms. For instance, members of the Rhizobiaceae family form symbiotic relationships with plant root nodules, playing a significant role in atmospheric nitrogen fixation. Other alphaproteobacteria, such as those in the Rickettsiales order, have adapted to intracellular lifestyles, acting as pathogens to humans and animals. The phylogeny of Alphaproteobacteria is complex and subject to ongoing revision, partly due to differences in genome characteristics like GC-content. Some debates exist regarding the placement of certain groups, such as Magnetococcidae, with proposals for reclassifying them into a separate class. Recent phylogenomic studies suggest that the protomitochondrial clade diverged early from the rest of the Alphaproteobacteria, indicating its unique evolutionary position. 
 
-![](images/Screen Shot 2024-05-16 at 11.05.43 AM.png)
+![](images/Screen%20Shot%202024-05-16%20at%2011.05.43%20AM.png)
 
 “Α-Proteobacteria (Class Alphaproteobacteria).” *iNaturalist*, www.inaturalist.org/taxa/83703-Alphaproteobacteria. Accessed 16 May 2024.
 
