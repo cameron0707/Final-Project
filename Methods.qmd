@@ -2,16 +2,12 @@
 title: "Methods"
 ---
 
-1.  Metagenomic sequencing data was obtained from the National Ecological Observatory Network (NEON), focusing on samples collected from the Chase Lake Wetlands over the spring and summer of 2024.
+Metagenomic sequencing data was obtained from National Ecological Observatory Network [**(NEON) MAGs**]{.underline} (Metagenome-Assembled Genomes) datasets, focusing on samples collected from the Chase Lake Wetlands over the spring and summer of 2024. These datasets include comprehensive genomic information that allows for detailed taxonomic and ecological analyses.
 
-2.  Analytical Techniques: Bioinformatic analyses were performed using QIIME 2 for microbial community analysis and R for statistical analysis, focusing on diversity indices and correlation tests between microbial presence and environmental factors.
+To investigate bacterial genomes and taxonomic groups at Chase Lake Wetlands, Alphaproteobacteria, a diverse and ecologically significant group of bacteria within the phylum Proteobacteria, was the main focus.
 
-To investigate bacterial genomes and taxonomic groups at Chase Lake Wetlands, we focused on Alphaproteobacteria, a diverse and ecologically significant group of bacteria within the phylum Proteobacteria. Alphaproteobacteria include a variety of phototrophs, chemolithotrophs, chemoorganotrophs, and aerobic photoheterotrophs, and are crucial in both agricultural and medical contexts due to their associations with eukaryotic organisms.
+[**Bioinformatic analyses**]{.underline} were performed using R for statistical analysis, focusing on diversity indices and correlation tests between microbial presence and environmental factors. Also, the NEON MAGs dataset was selected and filtered to identify genomes from Chase Lake (WOOD) and Alphaproteobacteria across various sites.
 
-Data for this study was obtained from NEON MAGs (Metagenome-Assembled Genomes) datasets. These datasets include comprehensive genomic information that allows for detailed taxonomic and ecological analyses.
+[**Graphical techniques**]{.underline} were used to examine how Alphaproteobacteria interacts with different environmental and ecosystem features across various sites. These graphs were also used to show the different genomes at Chase Lake Wetlands.
 
-1.  We selected and filtered the NEON MAGs dataset to identify genomes from Chase Lake (WOOD) and Alphaproteobacteria across various sites.
-
-2.  Using the `dplyr` package in R, we filtered the dataset for entries where the `Genome Name` contained "Chase Lake" and where the `Phylum` was "Proteobacteria." and class was alpha
-
-#### 
+-   These graphs included scatter plots, bar plots, Sankey plots, and circular plots.

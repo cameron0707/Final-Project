@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "final project"
+  title: "Final Project"
   navbar:
     left:
-      - href: abstract.qmd
+      - href: Abstract.qmd
         text: Abstract
       - href: MotivatingReasons.qmd
         text: Motivating Reasons

@@ -131,12 +131,6 @@ head(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria)
 ```
 
 ```{r}
-NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
-ggplot(aes(x = `Site.x`, y = soilTemp.x)) +
-  geom_boxplot()
-```
-
-```{r}
 NEON_chemistry_select <- NEON_chemistry %>%
   select(`genomicsSampleID`, `siteID`, `nlcdClass`)
 head(NEON_chemistry_select)
@@ -172,19 +166,13 @@ NEON_metagenomes_select_WOOD <- NEON_MAGs_metagenomes_chemistry %>%
 ```
 
 ```{r}
-NEON_metagenomes_select_WOOD %>%  
-ggplot(aes(x = `Site.x`, y = soilTemp)) +
-  geom_boxplot()
-```
-
-```{r}
 NEON_metagenomes_select_WOOD %>% 
   left_join(NEON_MAGs_select_WOOD, by = "Sample Name")
 ```
 
 ## Graphs
 
-### Lab 12
+### 1
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
@@ -192,44 +180,9 @@ ggplot(aes(x = `soilTemp.x`, y = Site.x)) +
   geom_boxplot()
 ```
 
-```{r}
-ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilTemp.x`, y = `Ecosystem Subtype.x`, color = Class)) +
-  geom_point() +
-  labs(title = "Scatterplot of Ecosystem Subtype vs Soil Temperature", 
-       x = "soilTemp", 
-       y = "Ecosystem Subtype",
-       color = "Order")
-```
+This boxplot shows the distribution of soil temperatures at several NEON locations, including Chase Lake Wetlands. The information shows the regional variations in soil temperature.
 
-```{r}
-NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
-ggplot(aes(x = `Site.x`, y = `Geographic Location.x`)) +
-  geom_boxplot()
-```
-
-```{r}
-NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
-  ggplot(aes(x = `Site.x`, y = `Geographic Location.x`)) +
-  geom_boxplot() +
-  labs(
-    title = "Boxplot of Geographic Location by Site",
-    x = "Site",
-    y = "Geographic Location"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-## Lab 12 graphs
-
-right here
-
-```{r}
-NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
-ggplot(aes(x = `soilTemp.x`, y = Site.x)) +
-  geom_boxplot()
-```
-
-This boxplot shows the distribution of soil temperatures at several NEON locations, including Chase Lake Wetlands The information shows the regional variations in soil temperature.
+### 2
 
 ```{r}
 ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilTemp.x`, y = `Ecosystem Subtype.x`, color = Class)) +
@@ -240,7 +193,9 @@ ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilTemp.x`
        color = "Class")
 ```
 
-The link between soil temperature and Alpha-Proteobacteria ecosystem subtype is seen in this scatterplot. The map makes it easier to see which subtypes of ecosystems are linked to certain temperature ranges.
+The link between soil temperature and Alphaproteobacteria ecosystem subtype is seen in this scatterplot. The map makes it easier to see which subtypes of ecosystems are linked to certain temperature ranges.
+
+### 3
 
 ```{r}
 ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilInCaClpH.x`, y = nlcdClass.x, color = Class)) +
@@ -251,7 +206,9 @@ ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `soilInCaClp
        color = "Class")
 ```
 
-This scatterplot shows how soil pH affects the distribution of Alpha-Proteobacteria across various land cover types by displaying the link between soil pH and the National Land Cover Database (NLCD) class.
+This scatterplot shows how soil pH affects the distribution of Alphaproteobacteria across various land cover types by displaying the link between soil pH and the National Land Cover Database (NLCD) class.
+
+### 4
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>% 
@@ -268,6 +225,8 @@ NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%
   select(Domain, Phylum, Class, Order, Family, Genus)
 ```
 
+### 5
+
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%   
   filter(is.na(Domain) | is.na(Phylum)| is.na(Class) | is.na(Order) | is.na(Family) | is.na(Genus)) %>%
@@ -276,6 +235,8 @@ ggplot(aes(x = `Bin Quality`)) +
 ```
 
 This bar graph displays the high quality (HQ) and medium quality (MQ) genomic assemblies of alpha-proteobacteria bins.
+
+### 6
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>% 
@@ -286,6 +247,8 @@ ggplot(aes(x = fct_infreq(`Site ID`))) +
 
 This bar plot shows the frequency of Alpha-Proteobacteria sequences across different NEON sites.
 
+### 7
+
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>% 
 ggplot(aes(x = `Gene Count`)) +
@@ -294,6 +257,8 @@ ggplot(aes(x = `Gene Count`)) +
 
 This histogram shows how many Alphaproteobacteria have a certain number of genes.
 
+### 8
+
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>% 
 ggplot(aes(x = `tRNA Genes`)) +
@@ -301,6 +266,8 @@ ggplot(aes(x = `tRNA Genes`)) +
 ```
 
 This histogram shows the distribution of gene counts and tRNA genes in the Alpha-Proteobacteria genomic data, illustrating the genomic complexity of these bacteria.
+
+### 9
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%   
@@ -311,13 +278,18 @@ ggplot(aes(x = `Assembly Type`)) +
 
 This graph shows the taxonomic data across different assembly types. This could help in identifying if certain assembly types are more prone to producing incomplete taxonomic information.
 
+### 10
+
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%   
   filter(is.na(Domain) | is.na(Phylum)| is.na(Class) | is.na(Order) | is.na(Family) | is.na(Genus)) %>%
 ggplot(aes(x = `Site ID.x`)) + 
   geom_bar(width = 0.5)
 ```
-This bar plot shows the distribution of genomic assemblies by type (combined vs. individual) and by site ID for Alpha-Proteobacteria.
+
+This bar plot shows the distribution of genomic assemblies by type (combined vs. individual) and by site ID for Alphaproteobacteria.
+
+### 11
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
@@ -327,6 +299,7 @@ ggplot(aes(x = `Scaffold Count`, y = `Site.x`)) +
 
 This boxplot shows the distribution of scaffold counts (segments of DNA) across different sites and ecosystem subtypes.
 
+### 12
 
 ```{r}
 ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Depth In Meters.x`, y = `Elevation In Meters.x`, color = Class)) +
@@ -339,6 +312,8 @@ ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Depth In Me
 
 The scatter plot shows the relationship between the depth and elevation of the class alphaproteobacteria. Each point represents a sample taken at a specific depth and elevation.
 
+### 13
+
 ```{r}
 ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Bin Completeness`, y = `Bin Contamination`, color = Class)) +
   geom_point() +
@@ -350,6 +325,8 @@ ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Bin Complet
 
 This scatterplot shows the relationship between bin completeness and contamination in alphaproteobacteria.
 
+### 14
+
 ```{r}
 ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Gene Count`, y = `Scaffold Count`, color = Class)) +
   geom_point() +
@@ -359,6 +336,7 @@ ggplot(NEON_MAGs_metagenomes_chemistry_alphaproteobacteria, aes(x = `Gene Count`
        color = "Class")
 ```
 
+### 15
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria %>%  
@@ -367,8 +345,6 @@ ggplot(aes(x = `Gene Count`, y = `Scaffold Count`)) +
 ```
 
 This scatterplot and boxplot show the relationship between gene count and scaffold count for Alpha-Proteobacteria, indicating the genomic assembly quality.
-
-## Lab 16 graph
 
 ```{r}
 NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON_2024_4_21.csv") %>% 
@@ -469,7 +445,7 @@ NEON_MAGs_Alpha <- NEON_MAGs_metagenomes_chemistry %>%
   filter(Phylum == "Alpha") 
 ```
 
-## Tree Graphs
+### 16
 
 ```{r, fig.height= 100, fig.width= 20}
 ggtree(tree_Alpha) +
@@ -477,7 +453,9 @@ ggtree(tree_Alpha) +
   xlim(0,40)
 ```
 
-The graph shows the phylogenetic relationships among the sequences or taxa represented in alphaproteobacteria.
+The graph shows the phylogenetic relationships among the taxa represented in alphaproteobacteria.
+
+### 17
 
 ```{r, fig.height = 40, fig.width = 20}
 ggtree(tree_Alpha, layout="circular")  %<+%
@@ -486,9 +464,8 @@ ggtree(tree_Alpha, layout="circular")  %<+%
   xlim(0,30) +
   geom_point(mapping=aes(color=Class))
 ```
-This circular phylogenetic tree represents the evolutionary relationships among Alpha-Proteobacteria, with annotations for different sites and assembly types.
 
-## Lab 9
+This circular phylogenetic tree represents the evolutionary relationships among Alpha-Proteobacteria, with annotations for different sites and assembly types.
 
 ```{r}
 NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON.csv") %>% 
@@ -517,6 +494,8 @@ NEON_MAGs_bact_ind <- NEON_MAGs %>%
   filter(`Assembly Type` == "Individual") 
 ```
 
+### 18
+
 ```{r, fig.width = 10}
 colnames(NEON_MAGs_bact_ind)
 NEON_MAGs_bact_ind %>% 
@@ -524,6 +503,10 @@ NEON_MAGs_bact_ind %>%
   geom_point() +
   labs(title = "Site ID vs Number of Genes by Phylum")
 ```
+
+This is a scatter plot that shows how different phyla's gene numbers are distributed across each site. Every dot is a unique combination of a site and a phylum; the phylum is shown by the dot's position on the y-axis, and the site is indicated by its position on the x-axis. The legend on the right side of the graph indicates which phyla are represented by the color of the dots.
+
+### 19
 
 ```{r}
 NEON_MAGs_bact_ind %>% 
@@ -533,6 +516,10 @@ NEON_MAGs_bact_ind %>%
   labs(title = "Site ID vs Phylum for Site 'WOOD'") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 ```
+
+This graph shows all the different phyla at the WOOD site.
+
+### 20
 
 ```{r}
 filtered_data <- NEON_MAGs_bact_ind %>% 
@@ -544,7 +531,7 @@ ggplot(filtered_data, aes(x = `Site ID`, y = `Phylum`, color = Phylum)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), plot.title = element_text(hjust = 0.5))
 ```
 
-## Lab 10
+This graph shows all the sites where Proteobacteria is present.
 
 ```{r}
 NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON.csv") %>% 
@@ -574,6 +561,8 @@ kable(
 )
 ```
 
+### 21
+
 ```{r}
   NEON_MAGs %>% 
     filter(Site == "Chase Lake Wetlands, North Dakota, USA")%>%
@@ -582,11 +571,7 @@ kable(
     coord_flip()
 ```
 
-## lab 14
-
-```{r}
-knitr::include_url("images/lab14/sankey-NEON_MAG_co_pavian.txt.html")
-```
+The distribution of bacterial classes in the Chase Lake Wetlands is shown in this bar graph. The y-axis lists the different bacterial classes found in the samples, while the x-axis indicates the number of incidences for each bacterial class.
 
 ```{r}
 kable(
@@ -599,8 +584,6 @@ kable(
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria <- NEON_MAGs %>%
   filter(`Class`== "Alphaproteobacteria")
 ```
-
-# Exercise
 
 ```{r}
 NEON_MAGs <- read_csv("data/NEON/GOLD_Study_ID_Gs0161344_NEON_edArchaea.csv") %>% 
@@ -643,11 +626,13 @@ alpha_data <- NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_ind %>%
   separate(`GTDB-Tk Taxonomy Lineage`, c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), "; ") 
 ```
 
+### 22
+
 ```{r}
-# Fill in the NAs with the taxonomic the higher taxonomic level to the left
+
 alpha_data[] <- t(apply(alpha_data, 1, zoo::na.locf))
 
-# Put the data into a format that can be read by the Sankey App
+
 
 alpha_data <- alpha_data %>% 
   unite(col = "classification", c(Domain, Phylum, Class, Order, Family, Genus, Species), sep='; ') %>% 
@@ -660,7 +645,7 @@ alpha_data <- alpha_data %>%
   mutate_at("classification", str_replace, "; ", "|g__") %>% 
   mutate_at("classification", str_replace, "; ", "|s__")  
 
-# Create format for Pavian with counts for each taxonomic level
+
 alpha_data_s <- alpha_data
 alpha_data_g <- alpha_data
 alpha_data_f <- alpha_data
@@ -679,19 +664,17 @@ alpha_data_d$classification <- sub("\\|p__.*", "", alpha_data_d$classification)
 alpha_data_allTaxa <- bind_rows(alpha_data_s, alpha_data_g, alpha_data_f, alpha_data_o, alpha_data_c, alpha_data_p, alpha_data_d) %>% 
   mutate(classification = as.factor(classification)) %>% 
   count(classification) %>% 
-# rename for Pavian format
+
   rename(`#SampleID` = `classification`) %>% 
   rename(`Metaphlan2_Analysis` = `n`) 
 
-# Write file to input to Pavian Sankey
+
 write_tsv(alpha_data_allTaxa, "NEON_MAG__alpha_ind_pavian.txt")
 ```
 
-knitr::include_url("project/data/NEON/sankey-NEON_MAG\_\_alpha_ind_pavian(1).txt.html")
+![](alpha_ind.png)
 
-![Individual](/project/alpha_ind.png) Individual
-
-![Individual](/cloud/project/alpha_ind.png) Individual
+This individual Sankey Plot shows the taxonomic lineage from alphaproteobacteria which shows all the bacteria that evolved from it.
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria <- NEON_MAGs %>%
@@ -704,7 +687,6 @@ NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_co <- NEON_MAGs_metagenomes_
 ```
 
 ```{r}
-# Select the GTDB Taxonomic lineage and separate into taxonomic levels
 alpha_dataco <- NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_co %>% 
   select(`GTDB-Tk Taxonomy Lineage`) %>% 
   # NAs are likely Archaea
@@ -713,11 +695,13 @@ alpha_dataco <- NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_co %>%
   separate(`GTDB-Tk Taxonomy Lineage`, c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), "; ") 
 ```
 
+### 23
+
 ```{r}
-# Fill in the NAs with the taxonomic the higher taxonomic level to the left
+
 alpha_dataco[] <- t(apply(alpha_dataco, 1, zoo::na.locf))
 
-# Put the data into a format that can be read by the Sankey App
+
 
 alpha_dataco <- alpha_dataco %>% 
   unite(col = "classification", c(Domain, Phylum, Class, Order, Family, Genus, Species), sep='; ') %>% 
@@ -730,7 +714,7 @@ alpha_dataco <- alpha_dataco %>%
   mutate_at("classification", str_replace, "; ", "|g__") %>% 
   mutate_at("classification", str_replace, "; ", "|s__")  
 
-# Create format for Pavian with counts for each taxonomic level
+
 alpha_dataco_s <- alpha_dataco
 alpha_dataco_g <- alpha_dataco
 alpha_dataco_f <- alpha_dataco
@@ -749,17 +733,17 @@ alpha_dataco_d$classification <- sub("\\|p__.*", "", alpha_dataco_d$classificati
 alpha_dataco_allTaxa <- bind_rows(alpha_dataco_s, alpha_dataco_g, alpha_dataco_f, alpha_dataco_o, alpha_dataco_c, alpha_dataco_p, alpha_dataco_d) %>% 
   mutate(classification = as.factor(classification)) %>% 
   count(classification) %>% 
-# rename for Pavian format
+
   rename(`#SampleID` = `classification`) %>% 
   rename(`Metaphlan2_Analysis` = `n`) 
 
-# Write file to input to Pavian Sankey
+
 write_tsv(alpha_dataco_allTaxa, "NEON_MAG_alpha_co_pavian.txt")
 ```
 
-knitr::include_url("images/lab14/sankey-NEON_MAG_ind_pavian.txt.html")
+![](images/NEON_MAG_Co.png)
 
-![Combined](NEON_MAG_Co.png)
+This combined Sankey plot shows the taxonomic lineage of bacteria across all samples, helping to identify common taxa and general trends.
 
 ```{r}
 NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_all <- NEON_MAGs %>%
@@ -781,10 +765,11 @@ alpha_data_all <- NEON_MAGs_metagenomes_chemistry_alphaproteobacteria_all %>%
   separate(`GTDB-Tk Taxonomy Lineage`, c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), "; ") 
 ```
 
+### 24
+
 ```{r}
 alpha_data_all[] <- t(apply(alpha_data_all, 1, zoo::na.locf))
 
-# Put the data into a format that can be read by the Sankey App
 
 alpha_data_all <- alpha_data_all %>% 
   unite(col = "classification", c(Domain, Phylum, Class, Order, Family, Genus, Species), sep='; ') %>% 
@@ -797,7 +782,7 @@ alpha_data_all <- alpha_data_all %>%
   mutate_at("classification", str_replace, "; ", "|g__") %>% 
   mutate_at("classification", str_replace, "; ", "|s__")  
 
-# Create format for Pavian with counts for each taxonomic level
+
 alpha_data_all_s <- alpha_data_all
 alpha_data_all_g <- alpha_data_all
 alpha_data_all_f <- alpha_data_all
@@ -816,15 +801,17 @@ alpha_data_all_d$classification <- sub("\\|p__.*", "", alpha_data_all_d$classifi
 alpha_data_all_allTaxa <- bind_rows(alpha_data_all_s, alpha_data_all_g, alpha_data_all_f, alpha_data_all_o, alpha_data_all_c, alpha_data_all_p, alpha_data_all_d) %>% 
   mutate(classification = as.factor(classification)) %>% 
   count(classification) %>% 
-# rename for Pavian format
+
   rename(`#SampleID` = `classification`) %>% 
   rename(`Metaphlan2_Analysis` = `n`) 
 
-# Write file to input to Pavian Sankey
+
 write_tsv(alpha_data_all_allTaxa, "NEON_MAG_alpha_all_pavian.txt")
 ```
 
-## Lab 8
+![](images/Screen%20Shot%202024-05-20%20at%201.00.17%20AM.png)
+
+This Sankey plot shows the taxonomic lineage of bacteria at WOOD site.
 
 ```{r}
 library(DT)
@@ -848,40 +835,6 @@ NEON_MAGs_Ind <- NEON_MAGs %>%
 ```
 
 ```{r}
-NEON_MAGs_Ind %>% 
-  count(`Bin Quality`, sort = TRUE) 
-```
-
-```{r}
-kable(
-  NEON_MAGs_Ind %>% 
-   count(`Bin Quality`) 
-)
-```
-
-```{r}
-datatable(
-  NEON_MAGs_Ind %>% 
-    filter(`Bin Quality` == "HQ")
-)
-```
-
-```{r}
-kable(
-NEON_MAGs_Ind %>% 
-  select(c(`GTDB-Tk Taxonomy Lineage`, `Total Number of Bases`)) %>% 
-  filter(`Total Number of Bases` > 10000000)
-)
-```
-
-```{r}
-datatable(
-NEON_MAGs_Ind %>% 
-  filter(str_detect(`GTDB-Tk Taxonomy Lineage`, 'Bacteria'))
-)
-```
-
-```{r}
 datatable(
 NEON_MAGs_Ind %>% 
   filter(str_detect(`Genome Name`, 'Chase Lake'))
@@ -891,13 +844,6 @@ NEON_MAGs_Ind %>%
 ```{r}
 NEON_MAGs_Ind_tax <- NEON_MAGs_Ind %>% 
   separate(`GTDB-Tk Taxonomy Lineage`, c("Domain", "Phylum", "Class", "Order", "Family", "Genus"), "; ", remove = FALSE) 
-```
-
-```{r}
-datatable(
-  NEON_MAGs_Ind_tax %>% 
-    count(Phylum, sort = TRUE)
-)
 ```
 
 ```{r}
@@ -914,40 +860,12 @@ NEON_MAGs_Ind_tax_sample <- NEON_MAGs_Ind_tax %>%
   separate(`subplot.layer.date`, c("Subplot", "Layer", "Date"), "-",) 
 ```
 
-```{r}
-datatable(
-  NEON_MAGs_Ind_tax_sample %>% 
-    count(Site, sort = TRUE)
-)
-```
 
-```{r}
-datatable(
-  NEON_MAGs_Ind %>% 
-  select(`GTDB-Tk Taxonomy Lineage`, `Total Number of Bases`, `Genome Name`) %>% 
-  filter(str_detect(`Genome Name`, "Chase Lake"))
-)
-```
-
-```{r}
-datatable(
-  NEON_MAGs_Ind %>%
-    count(class = "Chase Lake", sort = TRUE)
-)
-```
-
-```{r}
-datatable(
-  NEON_MAGs_Ind_tax_sample %>% 
-    filter(str_detect(`Phylum`, "Proteobacteria")) %>%
-    count(`Site`, sort = TRUE)
-)
-```
+### 25
 
 ```{r}
 library(ggplot2)
 
-# Create data frame
 data <- data.frame(
   Site = c(
    
@@ -957,76 +875,33 @@ data <- data.frame(
   Count = c(69)
 )
 
-# Create bar plot
 ggplot(data, aes(x = reorder(Site, Count), y = Count)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
+  geom_bar(stat = "identity", fill = "green4") +
   coord_flip() +
-  labs(title = "Count of Phylum Alphaproteobacteria at Each Site", x = "Site", y = "Count") +
+  labs(title = "Count of Class Alphaproteobacteria at Each Site", x = "Site", y = "Count") +
   theme_minimal()
 ```
 
-```{r}
-# Count data for Proteobacteria phylum by site
-proteobacteria_site_count <- NEON_MAGs_Ind_tax_sample %>% 
-  filter(str_detect(Phylum, "Proteobacteria")) %>%
-  count(Site, sort = TRUE)
+The graph shows the count of the class Alphaproteobacteria at Chase Lake Wetlands.
 
-# Plot
-ggplot(proteobacteria_site_count, aes(x = reorder(Site, -n), y = n, fill = Site)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Count of Proteobacteria by Site", x = "Site", y = "Count")
-```
+### 26
 
 ```{r}
 library(dplyr)
 library(ggplot2)
 
-# Count data for Proteobacteria phylum by site
+
 proteobacteria_site_count <- NEON_MAGs_Ind_tax_sample %>% 
-  filter(str_detect(Phylum, "Proteobacteria")) %>%
+  filter(str_detect(Class, "Alpha")) %>%
   count(Site, sort = TRUE)
 
-# Plot with smaller title
+
 ggplot(proteobacteria_site_count, aes(x = reorder(Site, -n), y = n, fill = Site)) +
   geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
-        plot.title = element_text(size = 12)) + # Adjust size as needed
-  labs(title = "Count of Proteobacteria by Site", x = "Site", y = "Count")
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 5),  # 
+        plot.title = element_text(size = 12),  
+        legend.text = element_text(size = 4)) +  
+  labs(title = "Count of Alphaproteobacteria by Site", x = "Site", y = "Count")
 ```
 
-```{r}
-library(dplyr)
-library(ggplot2)
-
-# Count data for Proteobacteria phylum by site
-proteobacteria_site_count <- NEON_MAGs_Ind_tax_sample %>% 
-  filter(str_detect(Phylum, "Proteobacteria")) %>%
-  count(Site, sort = TRUE)
-
-# Plot with smaller title
-ggplot(proteobacteria_site_count, aes(x = reorder(Site, -n), y = n, fill = Site)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
-        plot.title = element_text(size = 12)) + # Adjust size as needed
-  labs(title = "Count of Proteobacteria by Site", x = "Site", y = "Count")
-```
-
-```{r}
-library(dplyr)
-library(ggplot2)
-
-# Count data for Proteobacteria phylum by site
-proteobacteria_site_count <- NEON_MAGs_Ind_tax_sample %>% 
-  filter(str_detect(Phylum, "Proteobacteria")) %>%
-  count(Site, sort = TRUE)
-
-# Plot with smaller site labels and smaller legend text
-ggplot(proteobacteria_site_count, aes(x = reorder(Site, -n), y = n, fill = Site)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8),  # Adjust size as needed
-        plot.title = element_text(size = 12),  # Adjust title size as needed
-        legend.text = element_text(size = 4)) +  # Adjust legend text size as needed
-  labs(title = "Count of Proteobacteria by Site", x = "Site", y = "Count")
-
-```
+This plot visualizes the count of alpharoteobacteria observed at each site, with bars sorted by count and colored according to the site
