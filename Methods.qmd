@@ -5,3 +5,13 @@ title: "Methods"
 1.  Metagenomic sequencing data was obtained from the National Ecological Observatory Network (NEON), focusing on samples collected from the Chase Lake Wetlands over the spring and summer of 2024.
 
 2.  Analytical Techniques: Bioinformatic analyses were performed using QIIME 2 for microbial community analysis and R for statistical analysis, focusing on diversity indices and correlation tests between microbial presence and environmental factors.
+
+To investigate bacterial genomes and taxonomic groups at Chase Lake Wetlands, we focused on Alphaproteobacteria, a diverse and ecologically significant group of bacteria within the phylum Proteobacteria. Alphaproteobacteria include a variety of phototrophs, chemolithotrophs, chemoorganotrophs, and aerobic photoheterotrophs, and are crucial in both agricultural and medical contexts due to their associations with eukaryotic organisms.
+
+Data for this study was obtained from NEON MAGs (Metagenome-Assembled Genomes) datasets. These datasets include comprehensive genomic information that allows for detailed taxonomic and ecological analyses.
+
+1.  We selected and filtered the NEON MAGs dataset to identify genomes from Chase Lake (WOOD) and Alphaproteobacteria across various sites.
+
+2.  Using the `dplyr` package in R, we filtered the dataset for entries where the `Genome Name` contained "Chase Lake" and where the `Phylum` was "Proteobacteria." and class was alpha
+
+#### 
