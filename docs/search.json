@@ -53,7 +53,7 @@
     "href": "MotivatingReasons.html",
     "title": "Motivating Reasons",
     "section": "",
-    "text": "One of the motivations for this research stems from an increasing scientific interest in understanding how microbial communities influence and are influenced by wetland ecosystems. Wetlands serve crucial ecological functions, including water filtration and carbon storage, and microbes are at the heart of these processes.\nStudying these microorganisms helps predict the impacts of environmental changes on wetland health and informs conservation strategies. The Chase Lake Wetlands serve as an important case study due to their unique ecological characteristics and the pressures they face from agricultural runoff and climate change."
+    "text": "One of the motivations for this research comes from an increasing scientific interest in understanding how microbial communities influence and are influenced by different ecosystems and environmental factors. In this project, Alphaproteobacteria and Chase Lake Wetlands were the main focus of this study. Wetlands serve crucial ecological functions, including water filtration and carbon storage, and microbes are at the heart of these processes which are important in understanding how ecosystems work. Microbial communities, like Alphaproteobacteria, are sensitive to environmental changes and can provide early warning signs of ecosystem stress or degradation.\nAnother motivation is that studying these microorganisms can help predict the impacts of environmental changes on wetland and other environment’s health and informs conservation strategies. The Chase Lake Wetlands serve as an important case study due to their unique ecological characteristics and the pressures they face from agricultural runoff and climate change."
   },
   {
     "objectID": "abstract.html",
@@ -144,6 +144,20 @@
     "href": "Abstract.html",
     "title": "Abstract",
     "section": "",
-    "text": "This research project investigated the diversity and ecological roles of the class Alphaproteobacteria in the Chase Lake Wetlands, North Dakota, focusing on their response to environmental variables. By analyzing genomic data collected from the NEON project, the research identified key taxa within the phylum, Proteobacteria, and explored their potential functions in the wetland ecosystem. Preliminary results suggest a significant correlation between microbial diversity and water quality parameters."
+    "text": "This research project investigated the diversity and ecological roles of the class Alphaproteobacteria in the Chase Lake Wetlands, North Dakota, focusing on their response to environmental factors. By analyzing genomic data collected from the NEON project, the research identified key taxa within the phylum, Proteobacteria, and explored their potential functions in the wetland ecosystem as well as other environmental sites using genomic data gathered from the NEON project. Different bacterial genomes at Chase Lake Wetlands were also examined. The results reveal several key insights into microbial ecology and the environmental factors influencing microbial communities."
+  },
+  {
+    "objectID": "Conclusion.html",
+    "href": "Conclusion.html",
+    "title": "Conclusion",
+    "section": "",
+    "text": "The analysis of the NEON MAGs dataset, specifically focusing on the “WOOD” site and the taxonomic group Alphaproteobacteria, provides valuable insights into the microbial communities and their environmental interactions. The detailed examination of soil temperature, pH, genomic data distribution, and taxonomy through graphical analysis helps better show the environmental factors shaping microbial ecology. These findings are crucial for ecological research and can inform future studies on microbial diversity, function, and environmental adaptation. The study contributes to the broader knowledge of microbial ecology and informs wetland conservation and management strategies in Chase Lake and similar ecosystems. Future studies could consider seasonal changes to provide a more comprehensive knowledge of these microbial groups."
+  },
+  {
+    "objectID": "Discussion.html",
+    "href": "Discussion.html",
+    "title": "Discussion",
+    "section": "",
+    "text": "The diversity of Alphaproteobacteria and their correlation with various environmental factors such as soil pH and soil temperature give insight into distribution patterns and ecological preferences of the Alphaproteobacteria taxonomic group. The results suggests that microbial communities, like Alphaproteobacteria, are influenced by and also influence their surrounding ecosystem sites. It does so by highlighting differents aspects such as genomic assembly quality, taxonomy, and environmental factors. Future implications for wetland management can be utilized by increasing our understanding that these relationships help predict the impacts of nutrient loading on microbial communities and can guide conservation efforts. The study is limited by its reliance on only two seasons of data, which may not capture all the seasonal variations in microbial activity."
   }
 ]
