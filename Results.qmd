@@ -904,4 +904,4 @@ ggplot(proteobacteria_site_count, aes(x = reorder(Site, -n), y = n, fill = Site)
   labs(title = "Count of Alphaproteobacteria by Site", x = "Site", y = "Count")
 ```
 
-This plot visualizes the count of alpharoteobacteria observed at each site, with bars sorted by count and colored according to the site
+This plot visualizes the count of Alphaproteobacteria observed at each site, with bars sorted by count and colored according to the site
